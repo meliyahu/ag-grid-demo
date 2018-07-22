@@ -9,6 +9,9 @@
     [rowData]="rowData | async"
     [enableSorting]="true"
     [enableFilter]="true"
-    rowSelection="multiple">
+    rowSelection="multiple"
+    [autoGroupColumnDef]="autoGroupColumnDef"
+    groupSelectsChildren='true'>
+    
     </ag-grid-angular>
 </div>

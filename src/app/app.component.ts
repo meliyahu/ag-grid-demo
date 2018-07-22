@@ -13,11 +13,26 @@ agGrid: AgGridNg2;
 
   title = 'Ag Grid Demo';
 
+  // columnDefs = [
+  //   { headerName: 'Make', field: 'make', checkboxSelection: true},
+  //   { headerName: 'Model', field: 'model' },
+  //   { headerName: 'Price', field: 'price' }
+  // ];
+
+  // For grouping in ag-grid enterprise
   columnDefs = [
-    { headerName: 'Make', field: 'make', checkboxSelection: true },
-    { headerName: 'Model', field: 'model' },
+    { headerName: 'Make', field: 'make', rowGroupIndex: 0 },
     { headerName: 'Price', field: 'price' }
   ];
+
+  autoGroupColumnDef = {
+   headerName: 'Model',
+   field: 'model',
+   cellRenderer: 'agGroupCellRenderer',
+   cellRendererParams: {
+     checkbox: true
+   }
+  };
 
   rowData: any;
 
